@@ -1,0 +1,240 @@
+/* 
+   Global Styles
+   Reset margins, paddings, and make sizing predictable.
+   Also set a nice modern font across the app. 
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 
+   Page Background
+   A gradient to make the app pop and feel energetic.
+   Added padding so content isn’t glued to the edges.
+*/
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Center app content nicely */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 
+   Header Styles
+   Big bold title with a clean card-like background.
+   Rounded corners + shadow for a friendly floating effect.
+*/
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2575fc;
+}
+
+/* 
+   Subheading tagline 
+   Slightly smaller, purple accent for contrast.
+*/
+.tagline {
+  font-size: 1.2rem;
+  color: #6a11cb;
+  margin-bottom: 20px;
+}
+
+/* 
+   Layout
+   Grid-based: left column for controls/statistics, 
+   right column for the actual task list. 
+*/
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+/* 
+   Each "card" section
+   White background, rounded edges, padding for breathing room.
+*/
+.section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2575fc;
+  border-bottom: 2px solid #2575fc;
+  padding-bottom: 8px;
+}
+
+/* Form elements grouped with space */
+.input-group {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+}
+
+/* Inputs, dropdowns, and buttons share a consistent base style */
+input,
+select,
+button {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input {
+  flex: 1; /* let input expand while button stays compact */
+}
+
+/* Buttons: bold, clickable, with smooth hover effect */
+button {
+  background: #2575fc;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+  border: none;
+}
+
+button:hover {
+  background: #1a60c9;
+}
+
+/* Delete button */
+button.delete {
+  background: #ff4d4d;
+}
+button.delete:hover {
+  background: #e60000;
+}
+
+/* Complete button */
+button.complete {
+  background: #00c853;
+}
+button.complete:hover {
+  background: #009e3d;
+}
+
+/* 
+   Task List
+   Scrollable area so long lists don’t overflow the page.
+*/
+.task-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Each task as a neat white card with spacing */
+.task-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Group for task text (title + priority tag) */
+.task-info {
+  flex: 1;
+}
+
+.task-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Priority labels as little color-coded badges */
+.task-priority {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.priority-high {
+  background: #ff4d4d; /* red */
+}
+.priority-medium {
+  background: #ffa500; /* orange */
+}
+.priority-low {
+  background: #00c853; /* green */
+}
+
+/* Buttons on the right side of each task */
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Stats Section - small cards to show totals */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2575fc;
+}
+
+/* Completed tasks shown faded + crossed out */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Filter buttons neatly aligned */
+.filter-group {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Mobile Friendly: stack columns */
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster - Personal Task Manager</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- ======================
+             HEADER SECTION
+        ======================= -->
+      <header>
+        <h1>TaskMaster</h1>
+        <p class="tagline">Your Personal Task Management Solution</p>
+        <p>Stay organized and boost your productivity</p>
+      </header>
+
+      <!-- ======================
+             MAIN APP CONTAINER
+             Divided into Left and Right Panels
+        ======================= -->
+      <div class="app-container">
+        <!-- LEFT PANEL: Input, Statistics, Filters -->
+        <div class="left-panel">
+          <!-- Add New Task Section -->
+          <section class="section">
+            <h2>Add New Task</h2>
+            <div class="input-group">
+              <!-- Input field for task description -->
+              <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter task description"
+              />
+            </div>
+            <div class="input-group">
+              <!-- Priority dropdown -->
+              <select id="prioritySelect">
+                <option value="high">High Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="low">Low Priority</option>
+              </select>
+              <!-- Button to add task -->
+              <button id="addTaskBtn">Add Task</button>
+            </div>
+          </section>
+
+          <!-- Task Statistics Section -->
+          <section class="section">
+            <h2>Task Statistics</h2>
+            <div class="stats">
+              <!-- Total number of tasks -->
+              <div class="stat-card">
+                <div class="stat-number" id="totalTasks">0</div>
+                <div>Total Tasks</div>
+              </div>
+              <!-- Completed tasks -->
+              <div class="stat-card">
+                <div class="stat-number" id="completedTasks">0</div>
+                <div>Completed</div>
+              </div>
+              <!-- High priority tasks -->
+              <div class="stat-card">
+                <div class="stat-number" id="highPriorityTasks">0</div>
+                <div>High Priority</div>
+              </div>
+              <!-- Pending (active) tasks -->
+              <div class="stat-card">
+                <div class="stat-number" id="pendingTasks">0</div>
+                <div>Pending</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Task Filters Section -->
+          <section class="section">
+            <h2>Task Filters</h2>
+            <div class="filter-group">
+              <!-- Filter buttons to control task visibility -->
+              <button id="showAllBtn">Show All</button>
+              <button id="showHighBtn">High Priority</button>
+              <button id="showActiveBtn">Active</button>
+              <button id="showCompletedBtn">Completed</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT PANEL: Task List & Quick Actions -->
+        <div class="right-panel">
+          <!-- Task List Section -->
+          <section class="section">
+            <h2>Your Tasks</h2>
+            <div class="task-list" id="taskList">
+              <!-- Tasks will be added here dynamically with JavaScript -->
+            </div>
+          </section>
+
+          <!-- Quick Actions Section -->
+          <section class="section">
+            <h2>Quick Actions</h2>
+            <div class="input-group">
+              <!-- Bulk task operations -->
+              <button id="clearCompletedBtn">Clear Completed</button>
+              <button id="markAllActiveBtn">Mark All Active</button>
+              <button id="markAllCompleteBtn">Mark All Complete</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
